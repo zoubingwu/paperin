@@ -3,11 +3,10 @@
   "private": true,
   "scripts": {
     "clean": "rimraf node_modules",
-    "serve": "ts-node -r tsconfig-paths/register server/src/main.ts",
+    "serve": "ts-node -r tsconfig-paths/register packages/server/src/main.ts",
     "serve:dev": "tsc-watch -p tsconfig.server.json --onSuccess \"node dist/server/main.js\""
   },
   "workspaces": [
-    "server",
-    "browser"
+    "packages/*"
   ]
 }
