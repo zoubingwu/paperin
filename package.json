@@ -1,12 +1,13 @@
 {
-    "name": "paperin",
-    "scripts": {
-        "clean": "rm -rf node_modules"
-    },
-    "dependencies": {
-        "@nestjs/common": "^6.5.3",
-        "@nestjs/core": "^6.5.3",
-        "reflect-metadata": "^0.1.13",
-        "rxjs": "^6.5.2"
-    }
+  "name": "paperin",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "serve": "ts-node -r tsconfig-paths/register server/src/main.ts",
+    "serve:dev": "tsc-watch -p tsconfig.server.json --onSuccess \"node dist/server/main.js\""
+  },
+  "workspaces": [
+    "server",
+    "browser"
+  ]
 }
