@@ -9,7 +9,8 @@
     "baseUrl": "./",
     "incremental": true,
     "lib": [
-      "es2017"
+      "es2017",
+      "dom"
     ],
   },
   "exclude": [

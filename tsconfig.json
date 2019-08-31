@@ -1,6 +1,9 @@
+// this is for the browser build and vscode ts server check
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "jsx": "react",
+    "target": "es5"
   },
 }
