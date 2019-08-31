@@ -1,13 +1,17 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "target": "es5",
     "outDir": "./dist/browser",
   },
+  "include": [
+    "packages/browser/src"
+  ],
   "exclude": [
     "node_modules",
     "dist",
     "test",
-    "**/*spec.ts"
+    "**/*spec.ts",
+    "server"
   ]
 }

@@ -1,20 +1,6 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "baseUrl": "./",
-    "incremental": true,
-    "lib": [
-      "es2017"
-    ],
-    "target": "es2017"
+    "noEmit": true
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
 }
