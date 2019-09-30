@@ -7,16 +7,18 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "baseUrl": "./",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "incremental": true,
     "lib": [
       "es2017",
       "dom"
-    ],
+    ]
   },
   "exclude": [
     "node_modules",
     "dist",
     "test",
-    "**/*spec.ts",
+    "**/*spec.ts"
   ]
 }
