@@ -11,7 +11,7 @@ import { AuthModule } from './modules/auth/auth.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: path.join(__dirname, '../../dist/browser')
+      rootPath: path.join(__dirname, '../../dist/browser'),
     }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
