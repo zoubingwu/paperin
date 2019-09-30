@@ -2,7 +2,7 @@
   "name": "paperin",
   "private": true,
   "scripts": {
-    "clean": "rimraf node_modules",
+    "clean": "rimraf node_modules/ && rimraf dist/",
     "serve": "ts-node -r tsconfig-paths/register packages/server/src/main.ts",
     "serve:dev": "tsc-watch -p tsconfig.server.json --onSuccess \"node dist/server/main.js\"",
     "browser": "parcel build packages/browser/index.html -d dist/browser",
