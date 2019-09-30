@@ -5,5 +5,5 @@
     "noEmit": true,
     "jsx": "react",
     "target": "es5"
-  },
+  }
 }
