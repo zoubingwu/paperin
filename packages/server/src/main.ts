@@ -15,11 +15,13 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.setGlobalPrefix('api');
   app.use(logger);
-  app.use(helmet());
-  app.use(rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
-  }));
+  if (process.env.NODE_ENV !== 'development') {
+    app.use(helmet());
+    app.use(rateLimit({
+      windowMs: 15 * 60 * 1000, // 15 minutes
+      max: 100, // limit each IP to 100 requests per windowMs
+    }));
+  }
 
   const options = new DocumentBuilder()
     .setTitle('Paperin API documentation')
