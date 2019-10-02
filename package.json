@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "clean": "rimraf node_modules/ && rimraf dist/",
-    "serve": "ts-node -r tsconfig-paths/register packages/server/src/main.ts",
+    "serve": "node dist/server/main.js",
     "serve:dev": "cross-env NODE_ENV=development tsc-watch -p tsconfig.server.json --onSuccess \"node dist/server/main.js\"",
     "browser": "parcel build packages/browser/index.html -d dist/browser",
     "browser:dev": "cross-env NODE_ENV=development parcel watch packages/browser/index.html -d dist/browser",
