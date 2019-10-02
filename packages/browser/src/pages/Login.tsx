@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { Form, Icon, Input, Button } from 'antd';
 import { useStore } from '../models';
 import { observer } from 'mobx-react';
+import { useHistory } from 'react-router';
 
 const useStyles = createUseStyles({
   form: {
@@ -23,15 +24,27 @@ const useStyles = createUseStyles({
 export const Login: React.FC = observer(() => {
   const classes = useStyles();
   const session = useStore('session');
+  const history = useHistory();
 
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+
+  React.useEffect(() => {
+    const token = window.localStorage.getItem('token');
+    if (token) {
+      if (!session.token) {
+        const userEmail = window.localStorage.getItem('email');
+        const id = window.localStorage.getItem('id');
+        session.setUser(Number(id), userEmail, token);
+      }
+      history.push('/');
+    }
+  }, []);
 
   const handleLogin = React.useCallback(() => {
     if (!email || !password) {
       return;
     }
-
     session.login(email, password);
   }, [email, password]);
 
