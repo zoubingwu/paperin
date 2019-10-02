@@ -5,8 +5,8 @@
     "clean": "rimraf node_modules/ && rimraf dist/",
     "serve": "node dist/server/main.js",
     "serve:dev": "cross-env NODE_ENV=development tsc-watch -p tsconfig.server.json --onSuccess \"node dist/server/main.js\"",
-    "browser": "parcel build packages/browser/index.html -d dist/browser",
-    "browser:dev": "cross-env NODE_ENV=development parcel watch packages/browser/index.html -d dist/browser",
+    "browser:build": "yarn --cwd=packages/browser run build",
+    "browser:dev": "yarn --cwd=packages/browser run dev",
     "lint:server": "tslint -p tsconfig.server.json"
   },
   "workspaces": [
