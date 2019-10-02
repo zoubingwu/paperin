@@ -1,23 +1,18 @@
-import React, { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import * as React from 'react';
+import { Router, Switch, Route } from 'react-router-dom';
+import { history } from './history';
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
 
-function Count() {
-  const count = useSelector(state => state.count);
-  const dispatch = useDispatch();
-  const addByOne = useCallback(() => {
-    dispatch({ type: 'count/addBy', payload: 1 })
-  });
-  const addByOneAsync = useCallback(() => {
-    dispatch({ type: 'count/addByAsync' })
-  });
+import 'antd/dist/antd.css';
 
+export const App: React.FC = () => {
   return (
-    <div>
-      <h1>The count is: {count}</h1>
-      <button onClick={addByOne}>Add 1</button>
-      <button onClick={addByOneAsync}>Add 1 Async</button>
-    </div>
-  )
-}
-
-export default Count;
+    <Router history={history}>
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/login' component={Login}/>
+      </Switch>
+    </Router>
+  );
+};
