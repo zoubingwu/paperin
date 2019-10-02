@@ -1,6 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import { render } from 'react-dom';
+import { Root } from './Root';
 
-import Root from './Root';
+import './reset.less';
 
-ReactDOM.render(<Root />, document.querySelector('#app'));
+render(<Root />, document.querySelector('#app'));
